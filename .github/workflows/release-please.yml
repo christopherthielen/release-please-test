@@ -12,6 +12,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           monorepo-tags: true
+          command: manifest
 #          package-name: release-please-action
 #          path: app/scripts/modules/core
 
