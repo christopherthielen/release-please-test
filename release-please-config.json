@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "packages/app": {},
+    "packages/components": {},
+    "packages/server": {}
+  }
+}
