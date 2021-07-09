@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/christopherthielen/release-please-test/compare/server-v1.1.0...server-v1.2.0) (2021-07-09)
+
+
+### Features
+
+* 1 ([5abcb4e](https://www.github.com/christopherthielen/release-please-test/commit/5abcb4ec8dccfe68b958398c7951057690f480f2))
+
 ## [1.1.0](https://www.github.com/christopherthielen/release-please-test/compare/server-v1.0.0...server-v1.1.0) (2021-07-09)
 
 
