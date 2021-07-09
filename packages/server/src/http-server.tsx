@@ -26,7 +26,7 @@ function ssrHandler(_req: express.Request, res: express.Response) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Monorepo example server-side renderer app">
-    <title>Monorepo Example</title>
+    <title>My Monorepo Example</title>
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
