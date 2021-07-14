@@ -4,7 +4,7 @@ on:
       - main
 name: release-please
 jobs:
-  release-please:
+  release-please-app:
     runs-on: ubuntu-latest
     steps:
       - uses: GoogleCloudPlatform/release-please-action@v2
@@ -13,20 +13,21 @@ jobs:
           release-type: node
           monorepo-tags: true
           command: manifest
-      # The logic below handles the npm publication:
-      - uses: actions/checkout@v2
-        # these if statements ensure that a publication only occurs when
-        # a new release is created:
-        if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-node@v1
+          package-name: 'app'
+          config-file: '.github/release-please-config.app.json'
+          manifest-file: '.github/release-please-manifest.app.json'
+          pull-request-title-pattern: 'chore${scope}: release${component} app packages ${version}.'
+
+  release-please-tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v2
         with:
-          node-version: 12
-          registry-url: 'https://registry.npmjs.org'
-        if: ${{ steps.release.outputs.release_created }}
-      # if you are using Yarn, substitute the command below with `yarn install --frozen-lockfile`
-      - run: npm ci
-        if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          monorepo-tags: true
+          command: manifest
+          package-name: 'tools'
+          config-file: '.github/release-please-config.tools.json'
+          manifest-file: '.github/release-please-manifest.tools.json'
+          pull-request-title-pattern: 'chore${scope}: release${component} deck tooling ${version}.'

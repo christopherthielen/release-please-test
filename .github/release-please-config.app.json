@@ -2,7 +2,6 @@
   "bootstrap-sha": "8c282b8e560063b7b3271b925da09f2b3d2cde63",
   "packages": {
     "packages/app": {},
-    "packages/components": {},
-    "packages/server": {}
+    "packages/components": {}
   }
 }
